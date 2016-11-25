@@ -1,0 +1,222 @@
+<html ng-app='app'>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         
+        <script src="js/angular.js"></script>
+         <script src="js/ng-csv.js"></script>   
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <style>
+
+		</style>
+    </head>
+    <body ng-controller='Controller'>
+    	<div class="container-fluid">
+    		<button type="button" ng-csv="datalist1" filename="test.csv" add-bom="true" csv-header='{{header}}'>Export</button>
+    		<table class='table table-bordered table-responsive text-center'>
+	        	<thead>
+	        		<tr class="active">
+		        		<th class=''>name</th>
+		                <th>orderTotalPrice</th>
+		                <th noSort>buildingName</th>
+		                <th noSort>salesArea</th>
+		                <th>orderUnitPrice</th>
+		                <th>orderStatus</th>
+		                <th>chargeSum</th>
+		                <th>unit</th>
+		                <th>orderNumber</th>
+		                <th>createDate</th>
+		                <th>saleFloorRoomName</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr ng-repeat='item in datalist1'>
+	        			<td>{{item.customerName}}</td>
+	                    <td>{{item.orderTotalPrice}}</td>
+	                    <td>{{item.buildingName}}</td>
+	                    <td>{{item.salesArea}}</td>
+	                    <td>{{item.orderUnitPrice}}</td>
+	                    <td>{{item.orderStatus}}</td>
+	                    <td>{{item.chargeSum}}</td>
+	                    <td>{{item.unit}}</td>
+	                    <td>{{item.orderNumber}}</td>
+	                    <td>{{item.createDate}}</td>
+	                    <td>{{item.saleFloorRoomName}}</td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+    	</div>
+    </body>
+    <script>
+		var app=angular.module('app', ['ngSanitize','ngCsv']).controller('Controller',function($scope){
+			$scope.datalist1=[
+                {
+                    "customerName":"苏丝",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"d30765708a279847d78877186002e5e0",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"50",
+                    "id":"64c9d6b66e09f64b2c68e056665a7573",
+                    "unit":"2单元",
+                    "chargeSum":0,
+                    "orderNumber":"1000000344",
+                    "createDate":"2016-11-14 00:00:00",
+                    "saleFloorRoomName":"1101",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"米粒",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"afb8ba2a75abb748f77af8b7c5982bbb",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"10",
+                    "id":"e51a33749e738944b2984c79b36b3e0d",
+                    "unit":"1单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000343",
+                    "createDate":"2016-11-14 00:00:00",
+                    "saleFloorRoomName":"1102",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"布朗",
+                    "orderTotalPrice":2100000,
+                    "buildingName":"住宅—高层HQ测试1",
+                    "salesArea":"90.0",
+                    "roomId":"cfaf8acebe1e5b49a4bb6c7bbe4dcc22",
+                    "orderUnitPrice":23333.33,
+                    "orderStatus":"10",
+                    "id":"9e9918d8e9df0e4af7eb464ec45dc399",
+                    "unit":"1单元",
+                    "chargeSum":0,
+                    "orderNumber":"1000000342",
+                    "createDate":"2016-11-14 00:00:00",
+                    "saleFloorRoomName":"601",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"佘小彤",
+                    "orderTotalPrice":12010000,
+                    "buildingName":"住宅—高层测试1号楼",
+                    "salesArea":"121.0",
+                    "roomId":"e51c20499785894bfb98f569e58a7f8e",
+                    "orderUnitPrice":100083.33,
+                    "orderStatus":"20",
+                    "id":"74b8903d8f35b8449789d8587217d031",
+                    "unit":"1单元",
+                    "chargeSum":50000,
+                    "orderNumber":"1000000337",
+                    "createDate":"2016-11-11 00:00:00",
+                    "saleFloorRoomName":"401",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"强尼",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"d49938d1816de8414a8876687f039a18",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"10",
+                    "id":"5630d9ab74b4f749b77a5cb7c63eb460",
+                    "unit":"2单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000336",
+                    "createDate":"2016-11-11 00:00:00",
+                    "saleFloorRoomName":"503",
+                    "propertyConsultant":"setup01"
+                },
+                {
+                    "customerName":"咕咕鸡",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"22d5ab1547c72441aa487cc45dfa49ed",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"50",
+                    "id":"0f5540eb7dcf174b2e7a012713f7f193",
+                    "unit":"1单元",
+                    "chargeSum":0,
+                    "orderNumber":"1000000335",
+                    "createDate":"2016-11-11 00:00:00",
+                    "saleFloorRoomName":"503",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"天下第一帅",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"dd0892747688f7461c789c7789cfd952",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"20",
+                    "id":"b38b35fddbe61d437fd8231d18c728e6",
+                    "unit":"3单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000329",
+                    "createDate":"2016-11-10 00:00:00",
+                    "saleFloorRoomName":"501",
+                    "propertyConsultant":"setup01"
+                },
+                {
+                    "customerName":"r米粒",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"110.0",
+                    "roomId":"93576e8d56071543a459280525f5fd56",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"20",
+                    "id":"d7a7a91ec31e3c4ccec9064c66742e37",
+                    "unit":"2单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000328",
+                    "createDate":"2016-11-10 00:00:00",
+                    "saleFloorRoomName":"601",
+                    "propertyConsultant":"MKTTEST01"
+                },
+                {
+                    "customerName":"n鲁米",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"44fe88551561714c091becf17800a61c",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"20",
+                    "id":"3a2b07a1b90c5b410ab8077b77a6fc2b",
+                    "unit":"3单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000327",
+                    "createDate":"2016-11-10 00:00:00",
+                    "saleFloorRoomName":"502",
+                    "propertyConsultant":"setup01"
+                },
+                {
+                    "customerName":"卡森",
+                    "orderTotalPrice":3035354,
+                    "buildingName":"住宅—高层HQ测试交房（勿动）",
+                    "salesArea":"100.0",
+                    "roomId":"e21607c249d3044bee487b249d066f92",
+                    "orderUnitPrice":30353.54,
+                    "orderStatus":"20",
+                    "id":"79b784a0f5f46f481efa527f3597a434",
+                    "unit":"3单元",
+                    "chargeSum":7777,
+                    "orderNumber":"1000000326",
+                    "createDate":"2016-11-10 00:00:00",
+                    "saleFloorRoomName":"503",
+                    "propertyConsultant":"setup01"
+                }
+            ];
+            $scope.header=[];
+            angular.forEach($scope.datalist1[0],function(v,k){
+            	$scope.header.push(k);
+            })
+            $scope.
+            console.log($scope.header)
+		});
+
+	</script>
+</html>
